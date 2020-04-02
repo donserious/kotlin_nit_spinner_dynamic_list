@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.MutableBoolean
 import android.view.View
+import android.view.ViewDebug
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                     dataArray.clear()
                     var chislo: Int = s.toString().toInt()
                     //val dataArray = MutableList(chislo, { x -> "$x" })
-                    if ((chislo > 10)&&(chislo <= 100)) chislo -= 10
+                    if ((chislo > 10)&&(chislo <= 20)) chislo -= 10
                     if (chislo > 100) chislo -= 100
                     for (i in 0 until chislo) {
                         dataArray.add("${i+1}")
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     adapter.notifyDataSetChanged()
                 } catch (E: Exception) {
                     dataArray.clear()
-                    dataArray.add("")
+                    //ataArray.add("")
                     adapter.notifyDataSetChanged()
                     return
                 }
